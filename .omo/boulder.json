@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "active_work_id": "bbs-comment-plan-001",
+  "works": {
+    "bbs-comment-plan-001": {
+      "work_id": "bbs-comment-plan-001",
+      "active_plan": ".omo/plans/bbs-comment-plan.md",
+      "plan_name": "bbs-comment-plan",
+      "session_ids": [],
+      "status": "active",
+      "worktree_path": null
+    }
+  }
+}

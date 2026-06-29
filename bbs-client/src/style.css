@@ -1,0 +1,27 @@
+/* ===== 主题变量 ===== */
+:root {
+  --app-bg: #ffffff;
+  --app-header-bg: #409eff;
+  --app-text: #333333;
+  --app-card-bg: #ffffff;
+  --app-border: #ebeef5;
+  --app-muted: #999999;
+  --app-link: #409eff;
+}
+
+html.dark {
+  --app-bg: #0f0f1a;
+  --app-header-bg: #5b2c8e;
+  --app-text: #e0e0e0;
+  --app-card-bg: #1a1a2e;
+  --app-border: #2a2a3e;
+  --app-muted: #888899;
+  --app-link: #66b1ff;
+}
+
+/* 页面背景 */
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+  transition: background 0.3s, color 0.3s;
+}
