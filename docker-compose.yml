@@ -6,19 +6,41 @@
 
 services:
   # ---------------------------------------------------------------------------
+  # PostgreSQL — 生产级数据库
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ogsk
+      POSTGRES_PASSWORD: ogsk2024
+      POSTGRES_DB: ourgenskoyo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ogsk -d ourgenskoyo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------------------------------------------------------
   # Backend — Express.js API server (Node.js 20 Alpine)
   # ---------------------------------------------------------------------------
   backend:
     build:
       context: ./bbs-server
     environment:
-      DATABASE_URL: file:./data/dev.db
+      DATABASE_URL: postgresql://ogsk:ogsk2024@postgres:5432/ourgenskoyo
       JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
       JWT_EXPIRES_IN: 7d
       NODE_ENV: production
       PORT: 3000
+    depends_on:
+      - postgres
     volumes:
-      # SQLite database persistence
+      # SQLite database persistence (保留至迁移验证通过)
       - ./data:/app/data
       # Uploaded files (avatars, post images)
       - ./uploads:/app/uploads
