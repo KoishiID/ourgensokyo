@@ -1,7 +1,7 @@
 ﻿# Ourgensokyo 数据库设计
 
-> 当前存储：SQLite（Prisma ORM + LibSQL 适配器）
-> 迁移目标：PostgreSQL（规划中）
+> 当前存储：PostgreSQL 16（Prisma ORM + @prisma/adapter-pg）
+> 开发环境：Docker Compose 自动启动 postgres:16-alpine 容器
 
 ---
 
