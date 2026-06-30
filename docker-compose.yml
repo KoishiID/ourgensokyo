@@ -82,3 +82,6 @@ services:
       - backend
       - frontend
     restart: unless-stopped
+
+volumes:
+  pgdata:

@@ -1,0 +1,53 @@
+{
+  "version": "7.0",
+  "steps": [
+    {
+      "tag": "CreateSchema",
+      "schema": "public"
+    },
+    {
+      "tag": "CreateTable",
+      "table": "users"
+    },
+    {
+      "tag": "CreateTable",
+      "table": "categories"
+    },
+    {
+      "tag": "CreateTable",
+      "table": "posts"
+    },
+    {
+      "tag": "CreateTable",
+      "table": "comments"
+    },
+    {
+      "tag": "CreateIndex",
+      "index": "users_username_key"
+    },
+    {
+      "tag": "CreateIndex",
+      "index": "users_email_key"
+    },
+    {
+      "tag": "CreateIndex",
+      "index": "categories_name_key"
+    },
+    {
+      "tag": "AddForeignKey",
+      "constraint": "posts_user_id_fkey"
+    },
+    {
+      "tag": "AddForeignKey",
+      "constraint": "posts_category_id_fkey"
+    },
+    {
+      "tag": "AddForeignKey",
+      "constraint": "comments_post_id_fkey"
+    },
+    {
+      "tag": "AddForeignKey",
+      "constraint": "comments_user_id_fkey"
+    }
+  ]
+}
