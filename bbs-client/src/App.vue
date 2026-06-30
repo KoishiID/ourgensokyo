@@ -11,7 +11,7 @@
       <el-header>
         <div class="header-inner">
           <!-- Logo -->
-          <router-link to="/" class="logo">BBS</router-link>
+          <router-link to="/" class="logo">OGSK BBS</router-link>
           <div class="header-right">
             <!-- 深色模式切换 -->
             <el-button text @click="toggleDark" style="font-size:18px">
