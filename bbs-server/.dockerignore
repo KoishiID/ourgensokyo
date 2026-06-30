@@ -1,0 +1,18 @@
+# Dependencies — installed inside the image via npm ci
+node_modules/
+
+# Database — ephemeral; never ship dev data
+dev.db
+
+# Logs
+stderr.log
+stdout.log
+
+# Secrets & local config
+.env
+
+# Git metadata — not needed in the image
+.git
+.gitignore
+
+

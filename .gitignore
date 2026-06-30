@@ -1,0 +1,55 @@
+# --- Environment ---
+.env
+.env.local
+.env.*.local
+
+# --- Dependencies ---
+node_modules/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+
+# --- Build output ---
+dist/
+dist-ssr/
+
+# --- Docker runtime data ---
+data/
+uploads/
+
+# --- Database ---
+dev.db
+*.db
+*.db-journal
+
+# --- AI planning artifacts ---
+.omo/boulder.json
+.omo/run-continuation/
+.omo/drafts/
+.omo/evidence-ledger.json
+
+# --- Editor ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Planning docs ---
+.omo/plans/
+
+docs/INTERVIEW_TECH_DEEP_DIVE.md
+
+# --- AI session data ---
+.omo/run-continuation/
+.omo/drafts/
+.omo/boulder.json
+bbs-client/.omo/
+bbs-client/src/assets/Daily.md
