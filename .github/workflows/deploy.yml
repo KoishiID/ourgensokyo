@@ -11,6 +11,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Audit backend dependencies
+        run: |
+          cd bbs-server
+          npm ci
+          npm audit --audit-level=high
+      
+      - name: Audit frontend dependencies
+        run: |
+          cd bbs-client
+          npm ci
+          npm audit --audit-level=high
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
